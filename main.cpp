@@ -116,8 +116,28 @@ bool isPrime1(int n){
     return true;
 }
 
+// Print GCD/HCF    Brute force     O(n)
+
+void GCD(int a, int b){
+    int ans;
+    for(int i=1; i<= min(a,b); i++){
+        if(a % i == 0 && b % i == 0){
+            ans = i;
+        }
+    }
+    cout<<"GCD : "<<ans;
+}
+
+// print GCD Optimal    O(logɸmin(a,b)), where ɸ is 1.61.
+
+int gcd (int a, int b){
+    if(b == 0){
+        return a;
+    }
+    return gcd(b, a%b);
+}
 
 int main(){
-    cout<<isPrime1(5);
+    cout<<gcd(12, 120);
     return 0;
 }
