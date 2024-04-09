@@ -38,9 +38,25 @@ void reverseNum(int n){
     cout<<"Reversed Num : "<<rev;
 }
 
+// Palindrome
+
+void palindrome(int n){
+    int x = n;
+    int rev = 0;
+    while(n!=0){
+        int rem = n % 10;
+        rev = (rev * 10) + rem;
+        n/=10;
+    }
+    if(rev == x){
+        cout<<x<<" is Palindrome";
+    }else{
+        cout<<x<<" is not a palindrome";
+    }
+}
 
 
 int main(){
-    reverseNum(1234);
+    palindrome(121);
     return 0;
 }
