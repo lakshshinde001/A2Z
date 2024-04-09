@@ -95,7 +95,29 @@ void divisors1(int n){
     }
 }
 
+// check for prime Brute force O(n)
+
+bool isPrime(int n){
+    for(int i=2; i<n; i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+// check for prime optimal O(sqrt(n))
+bool isPrime1(int n){   
+    for(int i=2; i<sqrt(n); i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+
 int main(){
-    divisors(12);
+    cout<<isPrime1(5);
     return 0;
 }
