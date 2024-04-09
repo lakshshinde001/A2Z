@@ -87,6 +87,32 @@ bool palindromeStr(string str){
     return true;
 }
 
+// Printing fibonacci series Iterative Approach
+
+void f(vector<int> &arr, int n){
+    if(n<= 0){
+        return;
+    }
+    arr.push_back(0);
+    if(n == 1){
+        return;
+    }
+    arr.push_back(1);
+
+    for(int i=2; i<=n; i++){
+        arr.push_back(arr[i-1] + arr[i-2]);
+    }
+}
+// Fibonacci Recursive Approach
+int fibo(int n){
+    
+    if(n <= 1){
+        return n;
+    }
+    return fibo(n-1) + fibo(n-2);
+
+}
+
 // Printing array
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
@@ -95,10 +121,15 @@ void printArray(int arr[], int n){
     cout<<endl;
 }
 
-int main(){
-  
-    string str = "121";
-    cout<<palindromeStr(str);
+// Print Vector 
+void printVector(vector<int> arr){
+    for(int i=0; i<arr.size(); i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
 
+int main(){
+    fibo(10);
     return 0;
 }
