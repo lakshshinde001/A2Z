@@ -26,7 +26,7 @@ void countDigits2(int n){
 }
 
 
-// Reverse a given number
+// Reverse a given number   O(n)
 
 void reverseNum(int n){
     int rev = 0;
@@ -38,7 +38,7 @@ void reverseNum(int n){
     cout<<"Reversed Num : "<<rev;
 }
 
-// Palindrome
+// Palindrome   O(logn)
 
 void palindrome(int n){
     int x = n;
@@ -55,8 +55,24 @@ void palindrome(int n){
     }
 }
 
+// ArmStrong number O(n)
+
+void armStrong(int n){
+    int x = n;
+    int sum = 0;
+    while(n != 0){
+        int rem = n % 10;
+        sum += pow(rem, 3);
+        n/=10;
+    }
+    if(sum == x){
+        cout<<x<<" is a ArmStrong";
+    }else{
+        cout<<x<<" is not armstrong";
+    }
+}
 
 int main(){
-    palindrome(121);
+    armStrong(153);
     return 0;
 }
