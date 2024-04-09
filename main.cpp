@@ -6,7 +6,7 @@ using namespace std;
 void countDigits(int n){
     int count = 0;
     while(n!=0){
-        int rem = n % 10;
+        int rem = n % 10;       //optional
         count++;
         n/=10;
     }
@@ -21,18 +21,26 @@ void countDigits1(int n){
 
 // Count Digits Most optimized  log10 base n
 void countDigits2(int n){
-    int digits = floor(log10(n) + 1);
+    int digits = floor(log10(n) + 1);       
     cout<<digits<<" ";
 }
 
 
 // Reverse a given number
 
-
+void reverseNum(int n){
+    int rev = 0;
+    while(n !=0 ){
+        int rem = n % 10;
+        rev = (rev * 10) + rem;
+        n/=10;
+    }
+    cout<<"Reversed Num : "<<rev;
+}
 
 
 
 int main(){
-    countDigits1(1234310);
+    reverseNum(1234);
     return 0;
 }
