@@ -47,7 +47,37 @@ int FACT(int n){
 }   
 
 
+// Reverse an Array Iterative Approach  O(n)
+void reverseArray(int arr[], int n){
+    int si = 0, ei = n -1;
+    while(si < ei){
+        swap(arr[si], arr[ei]);
+        si++, ei--;
+    }
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}
+// Reverse an Array (Recursive Approach)    O(n)
+
+void reverseArr(int arr[], int si, int ei){
+    if(si < ei){
+        swap(arr[si], arr[ei]);
+        reverseArr(arr, si+1, ei-1);
+    }
+}
+
+// Printing array
+void printArray(int arr[], int n){
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main(){
-    cout<<FACT(5);
+  
+    
+
     return 0;
 }
