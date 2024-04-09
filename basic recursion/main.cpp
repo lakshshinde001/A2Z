@@ -67,6 +67,26 @@ void reverseArr(int arr[], int si, int ei){
     }
 }
 
+// Check given string is palindrome or not  O(n)
+
+bool palindromeStr(string str){
+    int si = 0, ei = str.length()-1;
+    while(si < ei){
+
+        if(!isalnum(str[si])){
+            si++;
+        }else if (!isalnum(str[ei])){
+            ei--;
+        }else if(tolower(str[si]) != tolower(str[ei])){
+            return false;
+        }else{
+              si++, ei--;
+        }
+      
+    }
+    return true;
+}
+
 // Printing array
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
@@ -77,7 +97,8 @@ void printArray(int arr[], int n){
 
 int main(){
   
-    
+    string str = "121";
+    cout<<palindromeStr(str);
 
     return 0;
 }
