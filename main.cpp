@@ -72,7 +72,30 @@ void armStrong(int n){
     }
 }
 
+// Print All divisors of n  (Brute Force O(n))
+
+void divisors(int n){
+    for(int i=1; i<=n; i++){
+        if(n % i == 0){
+            cout<<i<<" ";
+        }
+    }
+}
+
+// print all divisors Optimal O(sqrt(n))
+
+void divisors1(int n){
+    for(int i=1; i<sqrt(n); i++){
+        if(n % i == 0){
+            cout<<i<<" ";
+            if(i != (n/i)){
+                cout<<(n/i)<<" ";
+            }
+        }
+    }
+}
+
 int main(){
-    armStrong(153);
+    divisors(12);
     return 0;
 }
